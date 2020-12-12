@@ -14,7 +14,7 @@ export class ELearningService {
     private _http: HttpClient,
   ) { 
     this.ROOT_URL = 'http://localhost:3000/api/learnService/';
-    this.HERUKO_URL = 'https://logicrays-task.herokuapp.com/api/learnService';
+    this.HERUKO_URL = 'https://logicrays-service.herokuapp.com/api/learnService/';
 
   }
 
