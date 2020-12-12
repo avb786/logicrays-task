@@ -28,7 +28,7 @@ export class ELearningService {
     }));
   }
   public linkGeneration(param: any) {
-    return `${this.ROOT_URL}${param}`;
-    // return `${this.HERUKO_URL}${param}`;
+    // return `${this.ROOT_URL}${param}`;
+    return `${this.HERUKO_URL}${param}`;
   }
 }
