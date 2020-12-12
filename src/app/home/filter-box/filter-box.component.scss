@@ -1,0 +1,34 @@
+.content-heading {
+    display: flex;
+    justify-content: center;
+}
+.dropdown-effects {
+    border: none; 
+    font-weight: bold; 
+    color: palevioletred;
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-eff {
+    outline: none;
+    box-shadow: none;
+    background-color: black;
+    width: 100px;
+}
+.block-images-card {
+    height: 130px;
+    width: 211px;
+}
+.content-of-learning {
+    width: 70%;
+    display: flex;
+    align-items: center;
+}
+.share-link-block {
+    width: 10%;
+    background-color: #DC1D3C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

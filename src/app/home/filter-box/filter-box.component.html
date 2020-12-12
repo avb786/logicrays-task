@@ -1,0 +1,161 @@
+<div class="card mt-4">
+  <div class="card-body">
+    <h5 class="card-title content-heading">Select Content</h5>
+    <div class="container">
+      <form class="form-inline">
+        <!-- Language -->
+        <div class="input-group mb-2 border col-md-4">
+          <div class="input-group-prepend">
+            <div class="input-group-text p-0 bg-white" style="border: none">
+              <b>Language</b>
+            </div>
+          </div>
+          <select
+            (click)="selectedLanguage($event)"
+            class="form-control dropdown-effects"
+            id="inlineFormInputGroupUsername2"
+            placeholder="Username"
+            name=""
+            id=""
+          >
+            <option disabled selected value="">Select Language</option>
+            <option *ngFor="let lang of languagesArray" [value]="lang">
+              {{ lang }}
+            </option>
+          </select>
+        </div>
+        <!-- Subject -->
+        <div class="col-md-1"></div>
+
+        <div class="input-group mb-2 border col-md-3">
+          <div class="input-group-prepend">
+            <div class="input-group-text p-0 bg-white" style="border: none">
+              <b>Subject</b>
+            </div>
+          </div>
+          <select
+            (click)="selectedSubject($event)"
+            class="form-control dropdown-effects"
+            id="inlineFormInputGroupUsername2"
+            placeholder="Username"
+            name=""
+            id=""
+          >
+            <option disabled selected value="">Select Subject</option>
+            <option *ngFor="let subject of subjectArray" [value]="subject">
+              {{ subject }}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-1"></div>
+
+        <!-- Class -->
+        <div class="input-group mb-2 border col-md-3">
+          <div class="input-group-prepend">
+            <div class="input-group-text p-0 bg-white" style="border: none">
+              <b>Class</b>
+            </div>
+          </div>
+          <select
+            (click)="selectedClass($event)"
+            class="form-control dropdown-effects"
+            id="inlineFormInputGroupUsername2"
+            placeholder="Username"
+            name=""
+            id=""
+          >
+            <option disabled selected value="">Select Class</option>
+            <option *ngFor="let class of classArray" [value]="class">
+              {{ class }}
+            </option>
+          </select>
+        </div>
+
+        <!-- Chapter  -->
+        <div class="input-group mb-2 border col-md-4">
+          <div class="input-group-prepend">
+            <div class="input-group-text p-0 bg-white" style="border: none">
+              <b>Chapter</b>
+            </div>
+          </div>
+          <select
+            (click)="selectedChapter($event)"
+            class="form-control dropdown-effects"
+            id="inlineFormInputGroupUsername2"
+            placeholder="Username"
+            name=""
+            id=""
+          >
+            <option disabled selected value="">Select Chapter</option>
+            <option *ngFor="let chapter of chapterArray" [value]="chapter">
+              {{ chapter }}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-1"></div>
+        <!-- Topic -->
+
+        <div class="input-group mb-2 border col-md-7">
+          <div class="input-group-prepend">
+            <div class="input-group-text p-0 bg-white" style="border: none">
+              <b>Topic</b>
+            </div>
+          </div>
+          <select
+            (click)="selectedTopic($event)"
+            class="form-control dropdown-effects"
+            id="inlineFormInputGroupUsername2"
+            placeholder="Username"
+            name=""
+            id=""
+          >
+            <option disabled selected value="">Select Topic</option>
+            <option *ngFor="let topic of topicArray" [value]="topic">
+              {{ topic }}
+            </option>
+          </select>
+        </div>
+      </form>
+    </div>
+    <div class="container justify-content-center d-flex">
+      <button
+        class="btn btn-sm text-white btn-eff"
+        (click)="getAllLerarningData()"
+      >
+        GO
+      </button>
+    </div>
+  </div>
+</div>
+<div class="container p-0">
+  <div class="card mt-4 p-2">
+    <p
+      class="d-flex justify-content-end bold mr-3"
+      *ngIf="learningData.length > 0"
+    >
+      <b>Share Link</b>
+    </p>
+    <h1 *ngIf="learningData.length === 0">No Data Found....</h1>
+    <div class="card-body mb-2" *ngFor="let filter of learningData">
+      <div class="d-flex border">
+        <div class="w-25 bg-danger">
+          <img
+            class="img-thumbnail block-images-card"
+            src="{{ filter.image }}"
+            alt="e-learn-images"
+          />
+        </div>
+        <div class="content-of-learning">
+          <div class="container">
+            {{ filter.description }}
+          </div>
+        </div>
+        <div class="share-link-block">
+          <span>
+            <i class="fa fa-2x fa-file text-white"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

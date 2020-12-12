@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ELearningService } from './services/e-learning.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'logicrays-task';
+  elementsArray = ['Topics Wise Fetching....', 'Chapter Loading', 'Filtering Out...'];
+  data: any;
+  index = 0;
+  constructor(public auth: ELearningService) {
+    setInterval(() => {
+      this.increaseMsg(this.index);
+      this.index++;
+    }, 500);
+  }
+
+  increaseMsg(i: any) {
+    this.data = this.elementsArray[i];
+    if (this.index === this.elementsArray.length) {
+      this.index = 0;
+    }
+  }
 }

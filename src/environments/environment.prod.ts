@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: true,
+  learningService: {
+    getFilterLearning: 'get/learning/filter/data'
+  }
 };
