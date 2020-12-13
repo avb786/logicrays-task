@@ -1,4 +1,4 @@
-# LogicraysTask Configurations
+# Logicrays Task Configurations
 
 # To Run the webapp locally
    - ng serve
