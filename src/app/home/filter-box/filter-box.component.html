@@ -131,11 +131,11 @@
   <div class="card mt-4 p-2">
     <p
       class="d-flex justify-content-end bold mr-3"
-      *ngIf="learningData.length > 0"
+      *ngIf="learningData?.length > 0"
     >
       <b>Share Link</b>
     </p>
-    <h1 *ngIf="learningData.length === 0">No Data Found....</h1>
+    <h1 *ngIf="learningData?.length === 0">No Data Found....</h1>
     <div class="card-body mb-2" *ngFor="let filter of learningData">
       <div class="d-flex border">
         <div class="w-25 bg-danger">
@@ -159,3 +159,4 @@
     </div>
   </div>
 </div>
+<p-toast position="bottom-center"> </p-toast>

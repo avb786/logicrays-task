@@ -7,6 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeModule } from './home/home.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HomeModule } from './home/home.module';
     FormsModule,
     NgbModule,
     HttpClientModule,
-    HomeModule
+    HomeModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ELearningService } from "../../services/e-learning.service";
+import {MessageService} from 'primeng/api';
 @Component({
   selector: 'app-filter-box',
   templateUrl: './filter-box.component.html',
-  styleUrls: ['./filter-box.component.scss']
+  styleUrls: ['./filter-box.component.scss'],
+  providers: [MessageService]
 })
 export class FilterBoxComponent implements OnInit {
   public filterData = {};
@@ -20,7 +22,8 @@ export class FilterBoxComponent implements OnInit {
   public topicArray = ['Story', 'Problem Solving', 'Mathematical'];
 
   constructor(
-    private _learningService: ELearningService
+    private _learningService: ELearningService,
+    private messageService: MessageService
   ) { }
 
   ngOnInit(): void {
@@ -42,6 +45,9 @@ export class FilterBoxComponent implements OnInit {
       filterData['class'] = this.class;
     this._learningService.getElearningFilter(JSON.stringify(filterData)).subscribe((res: any) => {
       this.learningData = res.data;
+      if(res.data?.length === 0) {
+        this.showError();
+      }
       this._learningService.enableLoader = false;
     }, err => {
       this._learningService.enableLoader = false;
@@ -66,5 +72,8 @@ export class FilterBoxComponent implements OnInit {
   selectedTopic(data: any) {
     this.topic = data.target.value;
   }
+  showError() {
+    this.messageService.add({severity:'warn', summary: 'Warn', detail: 'No Data Found'});
+}
 
 }

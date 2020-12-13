@@ -5,6 +5,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { FilterBoxComponent } from './filter-box/filter-box.component';
 import { FormsModule } from '@angular/forms';
+import {ToastModule} from 'primeng/toast';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    FormsModule
+    FormsModule,
+    ToastModule
   ]
 })
 export class HomeModule { }
