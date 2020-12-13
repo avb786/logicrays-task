@@ -22,7 +22,7 @@ export class ELearningService {
     let getUrl = this.linkGeneration(environment.learningService.getFilterLearning);
     const params: any = {};
     params['queryData'] = filterData;
-    return this._http.get(getUrl, { params: params })
+    return this._http.get(getUrl,{ params: params, withCredentials: true })
     .pipe(map(response => {
       return response;
     }));
